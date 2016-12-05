@@ -1,0 +1,20 @@
+The src contains all the source code for the GraphX programs and the 
+target contains the jar files.
+
+The programs can be run as "sh file-name.sh" or "./file-name.sh"
+
+For all the GraphX programs, I have used the file "vertices.txt" in 
+which each line denotes a vertex and contains comma separated words 
+denoting the most frequent words at that time interval. This file was
+read as stored in the graphX vertex data structure. Since the vertices
+in grpahX are RDDs, using the cartisian product, the appropriate 
+edge connections was determined.
+
+PartBApplication1Question1.sh:
+
+The page rank algorithm was run on Live Journal data using the Pregel
+API implemented in GraphX.
+
+PartBApplication2Question1.sh:
+
+
