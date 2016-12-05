@@ -5,7 +5,8 @@ The programs can be run as "sh file-name.sh" or "./file-name.sh"
 
 For all the GraphX programs, I have used the file "vertices.txt" in 
 which each line denotes a vertex and contains comma separated words 
-denoting the most frequent words at that time interval. This file was
+denoting the most frequent words at that time interval. There were no
+repeats in the words at each time interval. This file was 
 read as stored in the graphX vertex data structure. Since the vertices
 in grpahX are RDDs, using the cartisian product, the appropriate 
 edge connections was determined.
@@ -17,4 +18,37 @@ API implemented in GraphX.
 
 PartBApplication2Question1.sh:
 
+Used the triplets API we compute the edges that satisfy the 
+requirements and then compute the count using reduce.
 
+PartBApplication2Question2.sh:
+
+Here we used the aggregateMessages construct to accumulate the count of 
+number of neighbors at each vertex and using a custom max function (takes 
+into account both the neighbor count and the number of words in the vertex) we 
+compute the winner vertex.
+
+PartBApplication2Question3.sh:
+
+Here we use the aggregateMessages construct to send the no of words and the 
+count of the words which is added up. Once thats done, we use a reduce function
+to compute the average with this information.
+
+PartBApplication2Question4.sh:
+
+For each vertex using the triplets API to accumulate a comma separated 
+string of all the words in the vertex. Once this information is obtained, we 
+used the standard word count program to determine the maximum occuring word.
+
+PartBApplication2Question5.sh:
+
+We used the graphX connectedComponents construct. Using the output of this, 
+we used a combination of maps and reduce to get the size of the maximum
+connected component.
+
+PartBApplication2Question6.sh:
+
+First we determine the most popular word and then use the triplet api to 
+get the total for each vertex. We ensure that a vertex contributes only
+once and then using a combination of map and reduce function we get the
+number of vertices containing this popular word. 
